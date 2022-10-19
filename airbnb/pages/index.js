@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import { Banner, Header } from '../components'
+import { Banner, Header, SmallCard } from '../components'
 
-export default function Home({exploreData}) {
+export default function Home(props) {
+  const exploreData = props.exploreData
   return (
     <div className=''>
       <Head>
@@ -17,10 +18,12 @@ export default function Home({exploreData}) {
           <h2 className='text-4xl font-semibold pb-5'>Explore Nearby</h2>
 
           {/* Pull some data from a server - API endpoints */}
-          {exploreData?.map((item)=>(
-            <h1>
-              {item.location}
-            </h1>
+          {exploreData.map(({img,distance,location})=>(
+            <SmallCard 
+            key={img}
+            img={img} 
+            distance={distance} 
+            location={location}/>
           ))}
         </section>
       </main>
@@ -28,11 +31,23 @@ export default function Home({exploreData}) {
   )
 }
 
+// export async function getStaticProps() {
+//   const exploreData = await fetch("http://links.papareact.com/pyp/").then((res) => res.json());
+//   return {
+//     props: {
+//       exploreData,
+//     },
+//   };
+// }
+
+import fsPromises from 'fs/promises';
+import path from 'path'
 export async function getStaticProps() {
-  const exploreData = await fetch("http://links.papareact.com/pyp/").then((res) => res.json());
+  const filePath = path.join(process.cwd(), 'data.json');
+  const jsonData = await fsPromises.readFile(filePath);
+  const exploreData = JSON.parse(jsonData);
+
   return {
-    props: {
-      exploreData,
-    },
-  };
+    props: exploreData
+  }
 }
