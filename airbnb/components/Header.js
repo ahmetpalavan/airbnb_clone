@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import {MagnifyingGlassIcon} from '@heroicons/react/20/solid'
 import {UserCircleIcon, Bars3Icon, GlobeAltIcon} from '@heroicons/react/24/outline'
 
 function Header() {
+    const [searchInput, setSearchInput] = useState('')
     return (
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10 '>
         {/* Left */}
