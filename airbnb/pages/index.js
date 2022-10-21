@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Banner, Header, MediumCard, SmallCard } from '../components'
+import { Banner, Footer, Header, LargeCard, MediumCard, SmallCard } from '../components'
 
 export default function Home(props) {
   const exploreData = props.exploreData
@@ -38,7 +38,15 @@ export default function Home(props) {
             ))}
           </div>
         </section>
+
+        <LargeCard
+        img="https://links.papareact.com/4cj"
+        title='The Greatest Outdoors'
+        description='Wishlists curated by Airbnb.'
+        buttonText='Get Inspired'
+        />
       </main>
+      <Footer/>
     </div>
   )
 }

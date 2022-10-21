@@ -1708,6 +1708,11 @@
   "resolved" "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz"
   "version" "3.0.0"
 
+"soft-ui-dashboard@^1.0.1":
+  "integrity" "sha512-cRL8/jseDodYaZFUekr3ZLvKeyxxe5H4r33C3s65ApLE03f8S2P83sc3wYDWEEz2aYt+5vlZLa81ASfQNTQjKg=="
+  "resolved" "https://registry.npmjs.org/soft-ui-dashboard/-/soft-ui-dashboard-1.0.1.tgz"
+  "version" "1.0.1"
+
 "source-map-js@^1.0.2":
   "integrity" "sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw=="
   "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz"
