@@ -34,6 +34,9 @@ const Search = (props) => {
                     ))}
                     </div>
                 </section>
+                <section className='hidden xl:inline-flex xl:min-w-[600px] cursor-pointer'>
+                    <Map/>
+                </section>
             </main>
             <Footer/>
         </div>
@@ -44,6 +47,7 @@ export default Search
 
 import fsPromises from 'fs/promises';
 import path from 'path'
+import Map from '../components/Map'
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'data.json');
     const jsonData = await fsPromises.readFile(filePath);
