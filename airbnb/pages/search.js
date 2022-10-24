@@ -1,13 +1,14 @@
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
-import { Footer, Header } from '../components'
-import format from 'date-fns/format'
+import { Footer, Header, InfoCard } from '../components'
+import moment from 'moment'
 
-const Search = () => {
+const Search = (props) => {
+    const searchResults = props.searchResults
     const router = useRouter()
     const {location, endDate, startDate, numOfGuest} = router.query
-    const formattedStartDate = format(new Date(startDate), "dd MMMM yy")
-    const formattedEndDate = format(new Date(endDate), "dd MMMM yy")
+    const formattedStartDate = moment(startDate).format("DD MMM YYYY")
+    const formattedEndDate = moment(endDate).format("DD MMM YYYY")
     const ahmet = `${formattedStartDate}- ${formattedEndDate}`
     return (
         <div>
@@ -23,6 +24,15 @@ const Search = () => {
                         <p className='button'>Rooms and Beds</p>
                         <p className='button'>More filters</p>
                     </div>
+
+                    <div className='flex flex-col'>
+                    {searchResults.map(({img, location,title,description,star,price,total})=>(
+                        <InfoCard key={img}
+                        img={img} location={location} title={title} description={description}
+                        star={star} price={price} total={total}
+                        />
+                    ))}
+                    </div>
                 </section>
             </main>
             <Footer/>
@@ -31,3 +41,14 @@ const Search = () => {
 }
 
 export default Search
+
+import fsPromises from 'fs/promises';
+import path from 'path'
+export async function getStaticProps() {
+    const filePath = path.join(process.cwd(), 'data.json');
+    const jsonData = await fsPromises.readFile(filePath);
+    const ahmet = JSON.parse(jsonData);
+    return {
+        props: ahmet
+    }
+}
