@@ -3,11 +3,13 @@ import ReactMapGl from 'react-map-gl'
 import {getCenter} from 'geolib'
 import { Marker, Popup } from 'react-map-gl'
 import Image from 'next/image'
-const Map = ({searchResults}) => {
+const Map = (props) => {
+    const searchResults = props.searchResults
     const coordinates = searchResults.map((result)=>({
         longtitude: result.long,
         latitude: result.lat
     }))
+    console.log("31",coordinates[0].latitude);
     const center = getCenter(coordinates)
     console.log(center);
     const [viewport, setViewport] = useState({
@@ -24,17 +26,17 @@ const Map = ({searchResults}) => {
         mapboxAccessToken={process.env.mapbox_key}
         {...viewport}
         onViewportChange={(nextViewport)=>setViewport(nextViewport)}>
-            {searchResults.map((result)=>(
-                <div key={result.long}>
+            {
+                searchResults.map((result)=>(
+                    <div key={result.long}>
                     <Marker
-                    longitude={result.long}
-                    latitude={result.lat}
+                    longitude={-100}
+                    latitude={40}
                     offsetLeft={-20}
                     offsetRight={-10}
-                    />
-                    <p className='cursor-pointer text-2xl'>
-                        <img src='image.png'/>
-                    </p>
+                    >
+                    <p className='cursor-pointer text-2xl animate-bounce'>📌</p>
+                    </Marker>
                 </div>
             ))}
         </ReactMapGl>
@@ -42,4 +44,14 @@ const Map = ({searchResults}) => {
 }
 
 export default Map
+import path from 'path'
+export async function getStaticProps() {
+    const filePath = path.join(process.cwd(), 'data.json');
+    const jsonData = await fsPromises.readFile(filePath);
+    const ahmet = JSON.parse(jsonData);
+    return {
+        props: ahmet
+    }
+}
+
 
