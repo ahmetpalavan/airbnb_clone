@@ -35,7 +35,7 @@ const Map = (props) => {
                     offsetLeft={-20}
                     offsetRight={-10}
                     >
-                    <p className='cursor-pointer text-2xl animate-bounce'>📌</p>
+                    <p className='cursor-pointer text-2xl animate-spin'>📌</p>
                     </Marker>
                 </div>
             ))}
