@@ -1,5 +1,3 @@
-Elbette! İşte `ahmetpalavan/airbnb_clone` deposu için bir README açıklaması örneği:
-
 # Airbnb Clone
 
 Bu proje, popüler bir seyahat ve konaklama platformu olan Airbnb'nin basit bir klonunu oluşturmayı amaçlamaktadır. Kullanıcılar, konaklama birimlerini listeleyebilir, rezervasyon yapabilir, ev sahipleri olarak kayıt olabilir ve kendi konaklama birimlerini listeleme imkanına sahip olacaktır.
@@ -46,13 +44,3 @@ Bu proje, popüler bir seyahat ve konaklama platformu olan Airbnb'nin basit bir 
    ```bash
    npm run start
    ```
-
-6. Tarayıcınızda `http://localhost:3000` adresine giderek uygulamayı görüntüleyin.
-
-## Katkıda Bulunma
-
-Katkıda bulunmak isterseniz, lütfen önerilerinizi, sorunlarınızı veya pull isteklerinizi [GitHub sorun takip](https://github.com/ahmetpalavan/airbnb_clone/issues) sayfasında paylaşın.
-
-## Lisans
-
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır. Detaylar için lütfen lisans dosyasını ince
