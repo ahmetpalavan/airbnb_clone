@@ -1,4 +1,5 @@
 Airbnb Clone
+
 Bu proje, popüler bir seyahat ve konaklama platformu olan Airbnb'nin basit bir klonunu oluşturmayı amaçlamaktadır. Kullanıcılar, konaklama birimlerini listeleyebilir, rezervasyon yapabilir, ev sahipleri olarak kayıt olabilir ve kendi konaklama birimlerini listeleme imkanına sahip olacaktır.
 
 Özellikler
